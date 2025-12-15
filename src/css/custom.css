@@ -1,0 +1,165 @@
+/**
+ * Any CSS included here will be global. The classic template
+ * bundles Infima by default. Infima is a CSS framework designed to
+ * work well for content-centric websites.
+ */
+
+/* Light Purple Transparent Navbar */
+.navbar {
+  background: rgba(180, 130, 255, 0.25) !important; /* light purple + transparency */
+  backdrop-filter: blur(10px) !important; /* glass blur effect */
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 4px 20px rgba(150, 80, 255, 0.25) !important; /* soft purple shadow */
+}
+
+/* Navbar text color */
+.navbar__item a,
+.navbar__brand {
+  color: #ffffff !important;
+  font-weight: 500;
+}
+
+/* On hover text color */
+.navbar__item a:hover {
+  color: #e4d4ff !important;
+}
+
+/* When navbar becomes sticky on scroll */
+.navbar--sticky.navbar--fixed-top {
+  background: rgba(180, 130, 255, 0.35) !important; /* stronger color on scroll */
+  backdrop-filter: blur(12px) !important;
+  box-shadow: 0 6px 25px rgba(150, 80, 255, 0.35) !important;
+}
+
+
+
+
+
+.social-icons {
+  display: flex;
+  gap: 18px;
+  margin-top: 10px;
+}
+
+.social-circle {
+  width: 55px;
+  height: 55px;
+  background: #ff4fb3;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 25px;
+  transition: 0.3s ease;
+}
+
+.social-circle:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 12px rgba(255, 79, 179, 0.6);
+}
+
+
+.social-icons {
+  display: flex;
+  gap: 15px;
+  margin-top: 10px;
+}
+
+.icon-circle {
+  width: 55px;
+  height: 55px;
+  background: #f34fb4;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 22px;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.icon-circle:hover {
+  background: #ff6bd1;
+  transform: scale(1.1);
+}
+
+
+
+
+
+
+
+
+
+
+.footer {
+  background: linear-gradient(135deg, #4b0082, #8e44ad) !important;
+  color: #ffffff !important;
+  padding-top: 40px !important;
+}
+
+.footer__title {
+  color: #e6d6ff !important;
+  font-weight: 600;
+}
+
+.footer__item a {
+  color: #ffffff !important;
+  opacity: 0.85;
+  transition: 0.2s ease;
+}
+
+.footer__item a:hover {
+  opacity: 1;
+  color: #f3e8ff !important;
+  text-decoration: underline;
+}
+
+.footer__copyright {
+  margin-top: 20px;
+  color: #f8eaff !important;
+  font-size: 14px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ /* You can override the default Infima variables here. */
+:root {
+  --ifm-color-primary: #2e8555;
+  --ifm-color-primary-dark: #29784c;
+  --ifm-color-primary-darker: #277148;
+  --ifm-color-primary-darkest: #205d3b;
+  --ifm-color-primary-light: #33925d;
+  --ifm-color-primary-lighter: #359962;
+  --ifm-color-primary-lightest: #3cad6e;
+  --ifm-code-font-size: 95%;
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+  /* p  */
+}
+
+/* For readability concerns, you should choose a lighter palette in dark mode. */
+[data-theme='dark'] {
+  --ifm-color-primary: #25c2a0;
+  --ifm-color-primary-dark: #21af90;
+  --ifm-color-primary-darker: #1fa588;
+  --ifm-color-primary-darkest: #1a8870;
+  --ifm-color-primary-light: #29d5b0;
+  --ifm-color-primary-lighter: #32d8b4;
+  --ifm-color-primary-lightest: #4fddbf;
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+}
