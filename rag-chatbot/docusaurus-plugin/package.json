@@ -1,0 +1,28 @@
+{
+  "name": "docusaurus-plugin-rag-chatbot",
+  "version": "1.0.0",
+  "description": "A Docusaurus plugin that integrates a RAG chatbot with text selection functionality",
+  "main": "src/index.js",
+  "keywords": [
+    "docusaurus",
+    "plugin",
+    "chatbot",
+    "rag",
+    "ai",
+    "documentation"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "peerDependencies": {
+    "@docusaurus/core": "^3.0.0",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0"
+  },
+  "dependencies": {
+    "@docusaurus/theme-common": "^3.0.0"
+  },
+  "devDependencies": {
+    "@docusaurus/module-type-aliases": "^3.0.0",
+    "@docusaurus/types": "^3.0.0"
+  }
+}

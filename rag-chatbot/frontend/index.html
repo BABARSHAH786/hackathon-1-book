@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Physical AI & Humanoid Robotics - Book Assistant</title>
+    <link rel="stylesheet" href="ChatBot.css">
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background-color: #fafafa;
+            color: #333;
+        }
+        
+        .content {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        }
+        
+        h1 {
+            color: #2c3e50;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 10px;
+        }
+        
+        h2 {
+            color: #34495e;
+            margin-top: 30px;
+        }
+        
+        p {
+            margin-bottom: 15px;
+        }
+        
+        .section {
+            margin-bottom: 30px;
+            padding: 20px;
+            border-left: 4px solid #3498db;
+            background-color: #f8f9fa;
+            border-radius: 0 8px 8px 0;
+        }
+        
+        .code-block {
+            background: #2c3e50;
+            color: #ecf0f1;
+            padding: 15px;
+            border-radius: 8px;
+            font-family: 'Courier New', monospace;
+            overflow-x: auto;
+            margin: 15px 0;
+        }
+        
+        .highlight {
+            background-color: #fff3cd;
+            padding: 2px 4px;
+            border-radius: 3px;
+        }
+    </style>
+</head>
+<body>
+    <div class="content">
+        <h1>Physical AI & Humanoid Robotics</h1>
+        
+        <div class="section">
+            <h2>Introduction to Physical AI</h2>
+            <p>Physical AI represents the cutting edge of robotics, blending sophisticated AI algorithms with advanced mechanical engineering to create intelligent machines that can learn, adapt, and operate autonomously in the complex, dynamic, and unpredictable physical world.</p>
+            
+            <p>Traditional AI excels in well-defined digital environments. However, the transition to the physical world introduces complexities like sensor noise, actuator limitations, real-time constraints, and the inherent unpredictability of physical interactions. This is often referred to as the "sim-to-real" gap.</p>
+        </div>
+        
+        <div class="section">
+            <h2>ROS 2 - Robotic Nervous System</h2>
+            <p>ROS 2 (Robot Operating System 2) is the middleware that powers modern robots. It provides a framework for writing robot software, including libraries, tools, and conventions that simplify the development of complex robotic behaviors.</p>
+            
+            <p>ROS 2 introduces several key concepts that are essential for modern robotics development:</p>
+            
+            <div class="code-block">
+                # ROS 2 Publisher Example
+                import rclpy
+                from std_msgs.msg import String
+                
+                def main():
+                    rclpy.init()
+                    node = rclpy.create_node('publisher_node')
+                    publisher = node.create_publisher(String, 'topic', 10)
+                    
+                    msg = String()
+                    msg.data = 'Hello from ROS 2!'
+                    publisher.publish(msg)
+            </div>
+            
+            <p>Key ROS 2 components include:</p>
+            <ul>
+                <li><span class="highlight">Nodes</span> - Processes that perform computation</li>
+                <li><span class="highlight">Topics</span> - Named buses over which nodes exchange messages</li>
+                <li><span class="highlight">Services</span> - Synchronous request/reply communication</li>
+                <li><span class="highlight">Actions</span> - Goal-oriented communication patterns</li>
+            </ul>
+        </div>
+        
+        <div class="section">
+            <h2>Sim-to-Real Transfer Challenges</h2>
+            <p>One of the core challenges in Physical AI is bridging the gap between simulation and reality. This includes:</p>
+            
+            <p><strong>Perception Discrepancies:</strong> Differences in lighting, textures, and object properties between simulation and reality.</p>
+            
+            <p><strong>Actuation Mismatch:</strong> Discrepancies in robot kinematics, dynamics, and motor responses.</p>
+            
+            <p><strong>Environmental Variability:</strong> Unaccounted for factors like air currents, surface friction variations, and unexpected obstacles.</p>
+            
+            <p>Physics engines like Bullet, ODE, PhysX, and MuJoCo are crucial tools in robotic development, simulating physical interactions such as gravity, collisions, friction, and joint dynamics.</p>
+        </div>
+        
+        <div class="section">
+            <h2>Advanced Humanoid Development</h2>
+            <p>Modern humanoid robots require mastery of several complex areas:</p>
+            
+            <ul>
+                <li><strong>Kinematics & Dynamics</strong> - Understanding how robot parts move and interact</li>
+                <li><strong>Balance Control</strong> - Maintaining stable posture during locomotion</li>
+                <li><strong>Whole-Body Control</strong> - Coordinating multiple subsystems simultaneously</li>
+            </ul>
+            
+            <p>These systems integrate various technologies including computer vision, sensor fusion, and machine learning to achieve human-like capabilities.</p>
+        </div>
+    </div>
+
+    <!-- ChatBot will be mounted here -->
+    <div id="chatbot-root"></div>
+
+    <!-- Script tags for React and Babel -->
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    
+    <!-- ChatBot component script -->
+    <script type="text/babel" src="ChatBot.jsx"></script>
+    
+    <script type="text/babel">
+        // Render the ChatBot component
+        const rootElement = document.getElementById('chatbot-root');
+        const root = ReactDOM.createRoot(rootElement);
+        root.render(<ChatBot />);
+    </script>
+</body>
+</html>
